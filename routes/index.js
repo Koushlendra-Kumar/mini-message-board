@@ -1,16 +1,19 @@
 var express = require('express');
 var router = express.Router();
 
+let time = new Date();
+let postTime = `${time.getHours()}:${time.getMinutes()}`;
+
 const messages = [
   {
     text: 'Hi there!',
     user: 'Amando',
-    added: new Date()
+    added: postTime
   },
   {
     text: 'Hello World!',
     user: "Charles",
-    added: new Date()
+    added: postTime
   }
 ];
 
@@ -26,8 +29,11 @@ router.get('/new', function(req, res, next) {
 
 /* post req handler */
 router.post('/new', (req, res, next) => {
-  messages.push(req.body);
-  console.log(messages);
+  messages.push({
+    text: req.body.text,
+    user: req.body.user,
+    added: postTime
+  });
   res.redirect('/');
 });
 
