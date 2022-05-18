@@ -5,9 +5,11 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
+    <h1>New Post</h1>
     <form action="/new" method="post">
-        <input type="text" name="user" id="author-name" placeholder="You Name">
-        <input type="text" name="text" id="message-text" placeholder="write your message">
+        <input type="text" name="user" id="author-name" placeholder="Your Name" required>
+        <label for="text">Message</label>
+        <input type="text" name="text" id="message-text">
         <button type="submit">Post</button>
     </form>
   </body>

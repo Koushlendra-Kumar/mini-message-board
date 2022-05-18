@@ -9,8 +9,11 @@
     <a href="/new">New Message</a>
     <% let i = 0 %>
     <% while (i < message.length){ %>
-      <h3><%= message[i].user %></h3>
-      <p><%= message[i].text %></p>
+      <div class="posts">
+        <h3><%= message[i].user %></h3>
+        <p><%= message[i].text %></p>
+        <p>A few seconds ago</p>
+      </div>
       <% i ++ %>
     <% } %>
   </body>
